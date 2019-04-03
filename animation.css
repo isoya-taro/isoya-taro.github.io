@@ -1,0 +1,57 @@
+/*下に下げるやつ*/
+@-webkit-keyframes sdb{
+	0% {
+		transform: rotate(45deg) translate(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(45deg) translate(20px,20px);
+		opacity: 0;
+	}
+}
+
+@keyframes sdb{
+	0% {
+		transform: rotate(45deg) translate(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(45deg) translate(20px,20px);
+		opacity: 0;
+	}
+}
+
+/*read more*/
+@-webkit-keyframes sdb_read{
+	0% {
+		transform: rotate(-45deg) translate(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-45deg) translate(10px,10px);
+		opacity: 0;
+	}
+}
+
+@keyframes sdb_read{
+	0% {
+		transform: rotate(-45deg) translate(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-45deg) translate(10px,10px);
+		opacity: 0;
+	}
+}
