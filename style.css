@@ -146,9 +146,6 @@ input,textarea{
 	transition: all 300ms ease;
 	text-align: center;
 }
-#sorry p{
-	font-size: 2.5rem;
-}
 .sorry_hidden{
 	transform: scale(1,0);
 }
