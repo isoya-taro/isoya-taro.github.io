@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cafelogram</title>
+    <meta name="description" content="cafelogramの公式サイトです。僕が行ったカフェの内容や味、評価などを誠に勝手ながら書いていきます。あくまでも個人的な評価になります。お気を付けください。">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animation.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137709946-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-137709946-1');
+	</script>
+  </head>
+  <body>
+    <!-- マージン、パディング書き方
+    [p/m][location]-[size]
+
+    location
+    -t,b,l,r
+    -x,y
+
+    size
+    -0
+    -1:0.25rem
+    -2:0.5rem
+    -3:1.0rem
+    -4:1.5rem
+    -5:3.0rem
+    -auto
+
+    レスポンシブ対応
+    576px and up:sm
+    768px and up:md
+    992px and up:lg
+    1200px and up:xl
+     -->
+    <header>
+    	<div class="fixed-top bg-white shadow">
+    		<nav class="navbar navbar-expand-sm navbar-light w-75 mx-auto">
+    			<a href="#main" class="navbar-brand">CafeLoGram</a>
+    			<button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+    				<span class="navbar-toggler-icon"></span>
+    			</button>
+    			<div id="menu" class="collapse navbar-collapse">
+    				<ul class="navbar-nav">
+	    				<li class="nav-item"><a href="#main" class="nav-link">Home</a></li>
+	    				<li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+	    				<li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+	    				<li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+	    			</ul>
+    			</div>
+    		</nav>
+    	</div>
+    </header>
+    <script>
+      // セレクタ：処理対象となるＤＯＭ要素を指定
+      // メソッド：処理対象に行いたい処理
+      // メソッドチェーン
+      // セレクタ.メソッド＄("")
+      // > 直下の要素
+      //   それ以下の要素
+      // , 複数の要素
+      // + 隣接の要素
+      // フィルタ
+      $(function(){
+		  $('a[href^="#"]').click(function(){
+		  	var header = $("nav").height();
+		    var speed = 500;
+		    var href= $(this).attr("href");
+		    var target = $(href == "#" || href == "" ? 'html' : href);
+		    var position = target.offset().top - header;//ターゲットの座標からヘッダの高さ分引く
+		    $("html, body").animate({scrollTop:position}, speed, "swing");
+		    return false;
+		  });
+		});
+    </script>
+    <main>
+    	<section class="section-scroll" id="main">
+    		<div class="mv">
+		      	<div class="w-100">
+		      		<h1 class="text-white text-left mx-auto w-75 mb-0">Welcome To <br>Cafelogram</h1>
+		      		<div class="arrow w-25 mx-auto">
+		      			<a href="#about" class="mb-5"><div class="mx-auto"></div></a>
+		      		</div>
+		      		<div id="section-scroller-button">
+		      		</div>
+		      	</div>
+      		</div>
+    	</section>
+    	<section class="section-scroll" id="about">
+    		<div class="row about mx-0">
+    			<div class="col-12 col-sm-6 px-0 order-sm-2">
+    				<div class="w-75 mx-auto my-5 py-5 text-center text-white">
+    					<h2 class="my-4">No parfait, No life</h2>
+    					<p class="px-2 display-">I like parfait. Because it make my life better.</p>
+    					<button class="w-75 mx-auto border border-white py-2 my-5 wagamama">read more<span class="ml-3 arrow2"></span></button>
+    				</div>
+    			</div>
+    			<div class="col-12 col-sm-6 px-0 img order-sm-1">
+    				<img src="img/simepafe.jpg" class="w-100 d-sm-none">
+    			</div>
+    		</div>
+    		<div class="row about mx-0">
+    			<div class="col-12 col-sm-6 px-0">
+    				<div class="w-75 mx-auto my-5 py-5 text-center text-white">
+    					<h2 class="my-4">No coffee, No life</h2>
+    					<p class="px-2">I like coffee. Because it also make my life better.</p>
+    					<button class="w-75 mx-auto border border-white py-2 my-5 wagamama">read more<span class="ml-3 arrow2"></span></button>
+    				</div>
+    			</div>
+    			<div class="col-12 col-sm-6 px-0 img">
+    				<img src="img/caferate.jpg" class="w-100 d-sm-none">
+    			</div>
+    		</div>
+    	</section>
+    	<section class="section-scroll pb-3" id="blog">
+    		<div class="w-75 mx-auto text-white">
+    			<h2 class="text-center pt-4 pb-2 mb-2 text-white">Blog</h2>
+    			<!-- 一列目 -->
+    			<div class="row w-100 mx-auto">
+    				<div class="row col-sm-12 col-lg-6 px-0 mx-0">
+    					<div class="col-sm-6 px-0 filter">
+							<img src="img/cafe10_ratte.jpg">
+	    				</div>
+	    				<div class="img_hidden img_wrap w-50 rounded p-2 d-none d-sm-block">
+	    					<button type="button" class="close" aria-label="閉じる">
+							　<span aria-hidden="true">&times;</span>
+							</button>
+							<div class="w-75 mx-auto my-3">
+								<img src="img/cafe10_ratte.jpg" class="w-100">
+								<p class="text-dark my-1">正解はカフェラテ</p>
+							</div>
+	    				</div>
+	    				<div class="col-sm-6 px-0 filter">
+    						<div class="message text-center text-white">
+    							<p class="py-5 px-4 lead">	Cafe latte or Café au lait</p>
+    							<div class="bg-white  rounded-circle d-none d-lg-block ">
+    								<div class="left 1-1"></div>
+    							</div>
+    						</div>
+	    				</div>
+    				</div>
+    				<div class="row col-sm-12 col-lg-6 px-0 mx-0">
+    					<div class="col-sm-6 px-0 filter order-sm-2 order-lg-1">
+							<img src="img/fluits_sand.jpg">
+	    				</div>
+	    				<div class="img_hidden img_wrap w-50 rounded p-2">
+	    					<button type="button" class="close" aria-label="閉じる">
+							　<span aria-hidden="true">&times;</span>
+							</button>
+							<div class="w-75 mx-auto my-3">
+								<img src="img/fluits_sand.jpg" class="w-100">
+								<p class="text-dark my-1">実は結構ならんだ</p>
+							</div>
+	    				</div>
+	    				<div class="col-sm-6 px-0 filter order-sm-1 order-lg-2">
+    						<div class="message text-center text-white">
+    							<p class="py-5 px-4 lead">Fluits Sand</p>
+    							<div class="bg-white rounded-circle d-none d-lg-block">
+    								<div class="left 1-2"></div>
+    							</div>
+    						</div>
+	    				</div>
+    				</div>
+    			</div>
+    			<!-- 一列目_end -->
+    			<!-- 2列目 -->
+    			<div class="row w-100 mx-auto">
+    				<div class="row col-sm-12 col-lg-6 px-0 mx-0">
+    					<div class="col-sm-6 px-0 filter order-lg-2">
+							<img src="img/hanacafe.jpg">	
+	    				</div>
+	    				<div class="img_hidden img_wrap w-50 rounded p-2">
+	    					<button type="button" class="close" aria-label="閉じる">
+							　<span aria-hidden="true">&times;</span>
+							</button>
+							<div class="w-75 mx-auto my-3">
+								<img src="img/hanacafe.jpg" class="w-100">
+								<p class="text-dark my-1">300円だった</p>
+							</div>
+	    				</div>
+	    				<div class="col-sm-6 px-0 filter order-lg-1">
+    						<div class="message text-center text-white">
+    							<p class="py-5 px-4 lead">Spider-Man</p>
+    							<div class="bg-white rounded-circle d-none d-lg-block">
+    								<div class="right 2-1"></div>
+    							</div>
+    						</div>
+	    				</div>
+    				</div>
+    				<div class="row col-sm-12 col-lg-6 px-0 mx-0">
+    					<div class="col-sm-6 px-0 filter order-sm-2 order-lg-2">
+							<img src="img/unko.jpg">
+	    				</div>
+	    				<div class="img_hidden img_wrap w-50 rounded p-2">
+	    					<button type="button" class="close" aria-label="閉じる">
+							　<span aria-hidden="true">&times;</span>
+							</button>
+							<div class="w-75 mx-auto my-3">
+								<img src="img/unko.jpg" class="w-100">
+								<p class="text-dark my-1">人には渡せない。</p>
+							</div>
+	    				</div>
+	    				<div class="col-sm-6 px-0 filter order-sm-1 order-lg-1">
+    						<div class="message text-center text-white">
+    							<p class="py-5 px-4 lead">Chocolate</p>
+    							<div class="bg-white rounded-circle d-none d-lg-block">
+    								<div class="right 2-2"></div>
+    							</div>
+    						</div>
+	    				</div>
+    				</div>
+    			</div>	
+    			<!-- 2列目_end -->
+    		</div>
+    	</section>
+    	<section id="contact" class="pb-3">
+    		<h2 class="text-center pt-4 pb-2 mb-2 text-white">Contact</h2>
+    		<div class="w-75 mx-auto text-white">
+	    		<form action="#" method="post" class="w-75 mx-auto text-white">
+	    			<p>Name<br>
+						<input type="text" name="name">
+					</p>
+					<p>E-mail<br>
+						<input type="text" name="mail">
+					</p>
+					<p>Contents<br>
+						<textarea name="comment" cols="30" rows="5"></textarea>
+					</p>
+					<div class="button">
+						<button type="submit" class="submit_button w-75 bg-success text-white rounded border-none py-2 my-4">send you message</button>
+					</div>
+					<p class="">※ためしに作ったので送信できません。</p>
+				</form>
+			</div>
+    	</section>
+        <div id="sorry" class="sorry_hidden w-100 p-5">
+            <button type="button" class="close mr-5" aria-label="閉じる">
+            <span aria-hidden="true" class="bye">&times;</span>
+            </button>
+            <p class="text-danger text-left mx-5 px-5">I'm sorry m(--)m<br>There is nothing</p>
+        </div>
+    </main>
+    <script>
+    	$(function(){
+    		$(".fixed_footer").click(function(){
+    			$("window").scrollTop(300);
+    		})
+    	})
+    	// popup
+    	$(function(){
+    		$(".filter").on("click", function(){
+    			$(this).next(".img_wrap").removeClass("img_hidden");
+    		});
+    	});
+    	$(function(){
+    		$(".close").on("click",function(){
+    			$(this).parent(".img_wrap").addClass("img_hidden");
+    		});
+    	})
+    	// ホバーしたとき
+    	$(function(){
+    		var arrow_start = {
+    			"border-bottom":"solid 2px #f3a516",
+    			"border-right":"solid 2px #f3a516",
+    		}
+    		var arrow_end = {
+    			"border-bottom":"solid 1px #fff",
+    			"border-right":"solid 1px #fff",
+    		}
+    		$(".wagamama").hover(function(){
+    			$(this).children(".arrow2").css(arrow_start);
+    		},function(){
+    			$(this).children(".arrow2").css(arrow_end)
+    		});
+    	});
+        // 謝るやつ
+        $(function(){
+            $(".wagamama").on("click",function(){
+                $("#sorry").removeClass("sorry_hidden")
+            });
+        });
+        $(function(){
+            $(".close").on("click",function(){
+                $(this).parent("#sorry").addClass("sorry_hidden");
+            });
+        });
+    </script>
+    <footer class="bg-dark">
+    	<div class="text-white text-center w-75 mx-auto pb-5">
+    		<h3 class="text-center pt-4 pb-2 mb-2 text-white">At the end</h3>
+    		<p>なんかかくことあるかなーと思って書いてみるけどあまりない。デザインからコードまですべて作り上げるというのは良いものですね。どうですかね。なにか意見等あれば上のお問い合わせか以下のメールまで。<br>
+    		E-mail：<a href="">xxx@yyyy.zz.jp</a></p>
+    	</div>
+    </footer>
+  </body>
+</html>
